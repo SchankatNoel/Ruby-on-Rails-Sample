@@ -1,0 +1,32 @@
+{
+	"name": "Ruby",
+	"image": "mcr.microsoft.com/devcontainers/ruby:3.1",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/ruby:1": {}
+	},
+	
+	"waitFor": "onCreateCommand",
+	"updateContentCommand": "",
+	"postCreateCommand": "ruby --version",
+	"postAttachCommand": "cd ruby-on-rails-sample", //"rails server",
+	"customizations": {
+    "codespaces": {
+      "openFiles": [
+        "app/views/hello/index.html.erb"
+      ]
+    }},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	"portsAttributes": {
+		"3000": {
+		  "label": "Application",
+		  "onAutoForward": "openPreview"
+		}
+	  },
+	"forwardPorts": [3000]
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
