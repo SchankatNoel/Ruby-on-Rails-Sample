@@ -9,7 +9,7 @@
 	"waitFor": "onCreateCommand",
 	"updateContentCommand": "",
 	"postCreateCommand": "ruby --version",
-	"postAttachCommand": "cd ruby-on-rails-sample", //"rails server",
+	"postAttachCommand": "",//"cd ruby-on-rails-sample", //"rails server",
 	"customizations": {
     "codespaces": {
       "openFiles": [
