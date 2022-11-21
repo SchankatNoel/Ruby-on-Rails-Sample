@@ -10,13 +10,13 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+defaults:
+  run:
+    shell: bash
+    working-directory: world
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: world
     services:
       postgres:
         image: postgres:11-alpine
@@ -46,10 +46,6 @@ jobs:
 
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: zsh
-        working-directory: scripts
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
